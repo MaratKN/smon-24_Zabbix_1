@@ -3,7 +3,7 @@
 ### Задание 1
 Установите Zabbix Server с веб-интерфейсом.
 
-Процесс выполнения
+Процесс выполнения:
 
 Выполняя ДЗ, сверяйтесь с процессом отражённым в записи лекции.
 
@@ -13,7 +13,7 @@
 
 Выполните все необходимые команды для установки Zabbix Server и Zabbix Web Server.
 
-Требования к результаты
+Требования к результату:
 
 Прикрепите в файл README.md скриншот авторизации в админке.
 
@@ -47,7 +47,7 @@ sudo systemctl enable zabbix-server zabbix-agent apache2
 ### Задание 2
 Установите Zabbix Agent на два хоста.
 
-Процесс выполнения
+Процесс выполнения:
 
 Выполняя ДЗ, сверяйтесь с процессом отражённым в записи лекции.
 
@@ -59,7 +59,7 @@ sudo systemctl enable zabbix-server zabbix-agent apache2
 
 Проверьте, что в разделе Latest Data начали появляться данные с добавленных агентов.
 
-Требования к результаты
+Требования к результату:
 
 Приложите в файл README.md скриншот раздела Configuration > Hosts, где видно, что агенты подключены к серверу
 
@@ -68,3 +68,25 @@ sudo systemctl enable zabbix-server zabbix-agent apache2
 Приложите в файл README.md скриншот раздела Monitoring > Latest data для обоих хостов, где видны поступающие от агентов данные.
 
 Приложите в файл README.md текст использованных команд в GitHub
+
+sudo apt update
+
+wget https://repo.zabbix.com/zabbix/6.0/debian/pool/main/z/zabbix-release/zabbix-release_6.0-4+debian11_all.deb
+
+sudo dpkg -i zabbix-release_6.0-4+debian11_all.deb
+
+sudo apt update
+
+apt install zabbix-agent
+
+systemctl restart zabbix-agent
+
+systemctl enable zabbix-agent
+
+sudo nano /etc/zabbix/zabbix_agentd.conf
+
+systemctl restart zabbix-agent
+
+![alt text](https://github.com/MaratKN/smon-24_Zabbix_1/blob/main/2.jpg)
+![alt text](https://github.com/MaratKN/smon-24_Zabbix_1/blob/main/3.jpg)
+![alt text](https://github.com/MaratKN/smon-24_Zabbix_1/blob/main/4.jpg)
